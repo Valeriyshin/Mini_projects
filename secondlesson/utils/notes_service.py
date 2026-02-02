@@ -34,3 +34,19 @@ def toggle_done(notes):
     
     notes[index]["done"] = not notes[index]["done"]
     print("Статус изменен")
+    
+def delete_notes(notes):
+    note_d = input("Введите номер заметки, которую нужно удалить: ").strip()
+
+    if not note_d.isdigit():
+        print("Нужно ввести число")
+        return
+
+    index = int(note_d) - 1
+
+    if index < 0 or index >= len(notes):
+        print("Заметка не найдена")
+        return
+
+    notes.pop(index)
+    print("Заметка удалена")

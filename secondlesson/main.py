@@ -1,5 +1,5 @@
 from utils.storage import load_notes, save_notes
-from utils.notes_service import show_notes, toggle_done, add_note
+from utils.notes_service import show_notes, toggle_done, add_note,delete_notes
 
 notes = load_notes()
 
@@ -8,6 +8,7 @@ while True:
     print("2. Добавить")
     print("3. Переключить done")
     print("4. Сохранить")
+    print("5. Удалить заметку")
     print("0. Выход")
 
     choice = input("Выбор: ")
@@ -21,6 +22,9 @@ while True:
     elif choice == "4":
         save_notes(notes)
         print("Сохранено")
+    elif choice == "5":
+        delete_notes(notes)
+        print("удалено")
     elif choice == "0":
         save_notes(notes)
         print("Выход")
